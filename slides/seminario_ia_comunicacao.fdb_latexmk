@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1788888547.70498 "c:/Users/rcpsi/OneDrive/Documents/GitHub/Consultoria/SeminarioAI-Congecom/slides/seminario_ia_comunicacao.tex" "seminario_ia_comunicacao.pdf" "seminario_ia_comunicacao" 1788888557.22705 0
-  "c:/Users/rcpsi/OneDrive/Documents/GitHub/Consultoria/SeminarioAI-Congecom/slides/seminario_ia_comunicacao.tex" 1788888084 22339 c0d928e81b38735c3feaf667f60d7929 ""
+["pdflatex"] 1788902223.25075 "c:/Users/rcpsi/OneDrive/Documents/GitHub/Consultoria/SeminarioAI-Congecom/slides/seminario_ia_comunicacao.tex" "seminario_ia_comunicacao.pdf" "seminario_ia_comunicacao" 1788902227.13515 0
+  "c:/Users/rcpsi/OneDrive/Documents/GitHub/Consultoria/SeminarioAI-Congecom/slides/seminario_ia_comunicacao.tex" 1788902217 28941 cc11d66b9253e5583e38ea74b068e7a2 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1730315858 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1730315858 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1730314164 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -240,11 +240,11 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1730319856 5521136 47e49b84c41d5ab3414c7e2d0ef6eb2b ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1730320026 3325936 6e896a909b476ed009efbfbadbcd5207 ""
   "c:/texlive/2024/texmf.cnf" 1730319826 713 e69b156964470283e0530f5060668171 ""
-  "seminario_ia_comunicacao.aux" 1788888556 7378 1adad3c14d9fec8391aa6d37a63207eb "pdflatex"
-  "seminario_ia_comunicacao.nav" 1788888556 4553 33fc00fdca305ea0c0c1d917892e9f81 "pdflatex"
-  "seminario_ia_comunicacao.out" 1788888556 1061 8e1cd2621f1eda52e5c4cb8103e78787 "pdflatex"
-  "seminario_ia_comunicacao.tex" 1788888084 22339 c0d928e81b38735c3feaf667f60d7929 ""
-  "seminario_ia_comunicacao.toc" 1788888556 430 40900aa433cf316880091aee4983083e "pdflatex"
+  "seminario_ia_comunicacao.aux" 1788902226 9079 35896cbedb22a26bab2f637628766865 "pdflatex"
+  "seminario_ia_comunicacao.nav" 1788902226 5669 04da6c3845b898f8b76c6b206158a6ca "pdflatex"
+  "seminario_ia_comunicacao.out" 1788902226 1253 aac9619609003e94f3f58ec8aecfaaad "pdflatex"
+  "seminario_ia_comunicacao.tex" 1788902217 28941 cc11d66b9253e5583e38ea74b068e7a2 ""
+  "seminario_ia_comunicacao.toc" 1788902226 495 5af72720b66b523740a3331c6487bcfc "pdflatex"
   (generated)
   "seminario_ia_comunicacao.aux"
   "seminario_ia_comunicacao.log"
