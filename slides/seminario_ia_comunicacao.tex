@@ -1,0 +1,541 @@
+% ============================================================
+% Fundamentos, práticas e experiências da IA na comunicação
+% Template de apresentação (Beamer) para o seminário do Cogecom Sudeste / XVIII Secom
+%
+% Compilar com: lualatex seminario_ia_comunicacao.tex   (recomendado)
+%           ou: xelatex seminario_ia_comunicacao.tex
+%           ou: pdflatex seminario_ia_comunicacao.tex   (usa fonte alternativa, sem Poppins)
+%
+% Estrutura pensada para o framework 4D do curso AI Fluency (Anthropic Academy,
+% Feller & Dakan): Delegação, Descrição, Discernimento, Diligência.
+% Seção "Ferramentas" é o centro da apresentação (mais slides), "Possibilidades"
+% tem mais peso do que "Limites", como combinado.
+%
+% Os blocos marcados com [PREENCHER] são placeholders de propósito: exemplos de
+% ferramentas e casos reais da comunicação você conhece melhor do que eu.
+% ============================================================
+
+\documentclass[aspectratio=169,11pt]{beamer}
+\newcommand{\hl}[1]{\textcolor{terracota}{#1}}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+  \IfFontExistsTF{Poppins}{%
+    \setmainfont{Poppins}[
+      UprightFont = *-Regular,
+      BoldFont = *-Medium,
+      ItalicFont = *-Italic,
+      BoldItalicFont = *-MediumItalic
+    ]
+  }{%
+    \setmainfont{Latin Modern Sans}
+  }
+\fi
+
+\usepackage[brazil]{babel}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{pifont}
+\usepackage{hyperref}
+
+\tcbuselibrary{skins,breakable}
+
+% ---------------------------------------------------------------
+% Paleta (azul marinho + terracota, seguindo o estilo já usado por
+% Rodrigo em outros materiais). Só duas cores de destaque + cinzas.
+% ---------------------------------------------------------------
+\definecolor{navy}{RGB}{16,32,58}
+\definecolor{terracota}{RGB}{212,116,66}
+\definecolor{graytxt}{RGB}{102,102,102}
+\definecolor{lightgray}{RGB}{225,225,225}
+
+% ---------------------------------------------------------------
+% Tema base: totalmente plano, sem barra lateral, sem símbolos de
+% navegação, sem caixas de título coloridas cheias.
+% ---------------------------------------------------------------
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=navy}
+\setbeamercolor{frametitle}{fg=navy}
+\setbeamercolor{structure}{fg=navy}
+\setbeamercolor{alerted text}{fg=terracota}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamerfont{title}{series=\bfseries}
+
+% título de frame: texto em navy + traço fino terracota embaixo,
+% sem caixa colorida de fundo
+\setbeamertemplate{frametitle}{
+  \vspace{0.35cm}
+  \hspace{0.1cm}\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\\[0.12cm]
+  \hspace{0.1cm}\textcolor{terracota}{\rule{2.1cm}{1.4pt}}
+  \vspace{0.15cm}
+}
+
+% rodapé discreto: seção corrente à esquerda, contador à direita
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=0.15cm,leftskip=0.4cm,rightskip=0.4cm]{normal text}
+    \color{graytxt}\tiny\insertsectionhead
+    \hfill
+    \color{graytxt}\tiny IA na comunicação
+    \hfill
+    \color{graytxt}\tiny\insertframenumber\,/\,\inserttotalframenumber
+  \end{beamercolorbox}
+}
+
+% marcadores de lista: quadrado terracota no nível 1, traço navy no nível 2
+\setbeamertemplate{itemize item}{{\rule{4.2pt}{4.2pt}}}
+\setbeamertemplate{itemize subitem}{\textcolor{navy}{\textendash}}
+\addtobeamertemplate{itemize/enumerate body begin}{\setlength{\itemsep}{4pt}}{}
+
+\setbeamertemplate{caption}[numbered]
+
+% ---------------------------------------------------------------
+% Caixas minimalistas (barra fina lateral, sem preenchimento pesado)
+% ---------------------------------------------------------------
+\newtcolorbox{notebox}[1]{
+  enhanced, breakable, colback=white, colframe=white,
+  boxrule=0pt, leftrule=2.6pt, colframe=navy,
+  arc=0pt, left=8pt, right=6pt, top=6pt, bottom=6pt,
+  before upper={\bfseries\color{navy}#1\par\vspace{3pt}\normalfont\color{navy}}
+}
+
+\newtcolorbox{alertbox}[1]{
+  enhanced, breakable, colback=white, colframe=white,
+  boxrule=0pt, leftrule=2.6pt, colframe=terracota,
+  arc=0pt, left=8pt, right=6pt, top=6pt, bottom=6pt,
+  before upper={\bfseries\color{terracota}#1\par\vspace{3pt}\normalfont\color{navy}}
+}
+
+% ---------------------------------------------------------------
+% Macro reutilizável para os slides de ferramentas: categoria de
+% ferramenta, uma linha de contexto, lista de bom uso e de mau uso.
+% Use este comando para acrescentar quantas categorias quiser.
+% ---------------------------------------------------------------
+\newcommand{\ferramentaframe}[4]{%
+\begin{frame}{#1}
+  {\small\color{graytxt} #2}
+  \vspace{0.25cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.485\textwidth}
+      \begin{notebox}{\ding{51}\ \ Bom uso}
+        \small
+        \begin{itemize}
+          #3
+        \end{itemize}
+      \end{notebox}
+    \end{column}
+    \begin{column}{0.485\textwidth}
+      \begin{alertbox}{\ding{55}\ \ Mau uso}
+        \small
+        \begin{itemize}
+          #4
+        \end{itemize}
+      \end{alertbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+}
+
+% ---------------------------------------------------------------
+% Macro para os slides separadores de seção (fundo navy, título
+% grande em branco, traço terracota).
+% ---------------------------------------------------------------
+\newcommand{\dividerframe}[2]{%
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.south west) rectangle (current page.north east);
+  \node[anchor=west, align=left, text width=0.85\paperwidth] at ([xshift=1cm]current page.west) {
+    \hyphenpenalty=10000\exhyphenpenalty=10000
+    \textcolor{terracota}{\rule{1.4cm}{2pt}}\\[0.45cm]
+    {\color{white}\fontsize{24}{28}\selectfont\bfseries #1}\\[0.3cm]
+    {\color{white!65!navy}\normalsize #2}
+  };
+\end{tikzpicture}
+\end{frame}
+}
+
+\hypersetup{colorlinks=true, linkcolor=navy, urlcolor=terracota}
+
+\title{Fundamentos, práticas e experiências da Inteligência Artificial na comunicação}
+\author{Rodrigo Cesar Pedrosa Silva}
+\institute{Coordenador do Bacharelado em Inteligência Artificial, UFOP}
+\date{10 de setembro de 2026}
+
+\begin{document}
+
+% =========================================================
+% CAPA
+% =========================================================
+\begin{frame}[plain]
+  \vspace{0.3cm}
+  {\color{graytxt}\small Cogecom Sudeste \ \textbullet\ \ XVIII Secom \ \textbullet\ \ UFOP}\\[0.45cm]
+  \begin{minipage}[t]{0.86\paperwidth}
+    \raggedright\hyphenpenalty=10000\exhyphenpenalty=10000
+    {\color{navy}\fontsize{22}{26}\selectfont\bfseries Fundamentos, práticas e experiências da Inteligência Artificial (na comunicação)}
+  \end{minipage}\\[0.35cm]
+  \textcolor{terracota}{\rule{3cm}{2pt}}\\[0.35cm]
+  % Subtítulo-tese: sugestão que alude à seção de ferramentas via o framework 4D.
+  % Ajuste para a formulação que preferir antes de apresentar.
+
+  {\color{graytxt}\small \textbf{Prof. Rodrigo Cesar Pedrosa Silva} \\ 
+  Coordenador do Bacharelado em Inteligência Artificial, UFOP\\ 
+  Departamento de Computação - Instituto de Ciências Exatas e Biológicas (ICEB)\\
+   CSILab - Laboratório de Computação de Sistemas Inteligentes \\
+  10 de setembro de 2026}
+
+\end{frame}
+
+\begin{frame}{Sumário}
+  \tableofcontents
+\end{frame}
+
+% =========================================================
+\section{Fluência em IA}
+% =========================================================
+\dividerframe{Fluência em IA}{Usar uma ferramenta e saber quando usá-la são competências diferentes}
+
+\begin{frame}{Por que fluência?}
+  \begin{itemize}
+    \item Modelos, ferramentas e prompts \hl{mudam o tempo inteiro} 
+    \item Como escrever um bom prompt para uma tarefa específica envelhece rápido 
+    \item \hl{Quais princípios devem guiar a nossa interação com a IA?}
+    \item \hl{Saber usar bem} a IA \hl{de forma responsável}
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \begin{notebox}{Definição}
+    \small Fluência em IA é interagir com sistemas de IA de forma eficaz, eficiente, ética e segura, e adaptar essa forma de interagir conforme a tecnologia muda.
+  \end{notebox}
+\end{frame}
+
+\begin{frame}{Três formas de trabalhar com IA}
+  \begin{itemize}
+    \item \textbf{Automação}: a IA executa uma tarefa bem definida no seu lugar (transcrever, resumir, formatar)
+    \item \textbf{Aumento}: você e a IA trabalham juntos, em ida e volta, para pensar melhor (rascunhar, revisar, analisar, explorar alternativas)
+    \item \textbf{Agência}: a IA conduz várias etapas de um processo com autonomia, sob supervisão sua (pesquisar, redigir e revisar um material em sequência)
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{notebox}{Por que isso importa}
+    \small As quatro competências aparecem de forma diferente em cada um desses três modos.
+  \end{notebox}
+\end{frame}
+
+
+\begin{frame}{Competências para a fluência em IA}
+  \begin{itemize}
+    \item \textbf{Delegação}: \hl{o que passar para a IA}, e o que continua sendo trabalho humano
+    \item \textbf{Descrição}: \hl{como comunicar o que se quer}, com contexto e critérios
+    \item \textbf{Discernimento}: \hl{como avaliar} criticamente o que a IA devolveu
+    \item \textbf{Diligência}: \hl{quem responde pelo resultado final}
+  \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Capacidades e limites, lado a lado}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.485\textwidth}
+      \begin{notebox}{O que a IA generativa faz bem}
+        \small
+        \begin{itemize}
+          \item Gerar variações de texto e formato rapidamente
+          \item Sintetizar grandes volumes de informação
+          \item Manter consistência de estilo e tom
+          \item Adaptar um mesmo conteúdo para públicos diferentes
+        \end{itemize}
+      \end{notebox}
+    \end{column}
+    \begin{column}{0.485\textwidth}
+      \begin{alertbox}{Onde ela ainda falha}
+        \small
+        \begin{itemize}
+          \item Não verifica fatos, apenas prevê texto plausível
+          \item Não tem acesso automático ao contexto institucional
+          \item Não responde por decisões éticas ou editoriais
+          \item Erra com mais frequência do que aparenta
+        \end{itemize}
+      \end{alertbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =========================================================
+\section{O framework das quatro competências}
+% =========================================================
+\dividerframe{O framework das quatro competências}{Delegação, Descrição, Discernimento, Diligência}
+
+\begin{frame}{Delegação}
+  \begin{notebox}{Definição}
+    \small Ter visão de conjunto antes de dividir o trabalho: o que você quer alcançar, o que só uma pessoa deve fazer, e onde a IA realmente ajuda.
+  \end{notebox}
+
+  \textbf{Pergunta-guia:} esta tarefa exige julgamento humano e contexto institucional, ou é mecânica o suficiente para delegar?
+
+  \begin{alertbox}{Cuidado}
+    \small Delegar não é apenas transferir a tarefa: sem um objetivo claro, delegação vira terceirização sem controle.
+  \end{alertbox}
+
+  \begin{itemize}
+    \item Delegar o levantamento e o rascunho, não a decisão final do que vai ao ar
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Descrição}
+  \begin{notebox}{Definição}
+    \small Ir além do prompt: ter uma conversa com contexto suficiente sobre o que se quer, como a IA deve abordar a tarefa, e o tom esperado.
+  \end{notebox}
+  \textbf{Pergunta-guia:} eu daria essas mesmas instruções a um estagiário novo e esperaria um bom resultado?
+  
+  \begin{alertbox}{A diferença}
+    \small ``Escreva uma nota'' e ``escreva uma nota de até 200 palavras, tom institucional, para veículos locais, evitando jargão técnico'' geram resultados muito diferentes.
+  \end{alertbox}
+
+  \begin{itemize}
+    \item Público, tom, tamanho, o que evitar, exemplos 
+  \end{itemize}
+\end{frame} 
+
+\begin{frame}{Discernimento}
+  \begin{notebox}{Definição}
+    \small Avaliar criticamente o que a IA devolveu, com a expertise que só você tem no assunto: o que aproveitar, o que ajustar, o que descartar por completo.
+  \end{notebox}
+  \vspace{0.1cm}
+  \textbf{Pergunta-guia:} eu assinaria embaixo disso?
+  \vspace{0.1cm}
+  \begin{alertbox}{Ponto central}
+    \small É a sua expertise no assunto que permite perceber quando a IA está errada com segurança.
+  \end{alertbox}
+  \vspace{0.1cm}
+  \begin{itemize}
+    \item Na comunicação: fatos, números e citações sempre checados, e a pergunta final: isso está alinhado com a linha editorial e realmente ajuda a avançar?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Diligência}
+  \begin{notebox}{Definição}
+    \small Assumir a responsabilidade pelo resultado final: pelo que foi publicado, pelo que foi automatizado, pelas consequências.
+  \end{notebox}
+  \vspace{0.3cm}
+  \textbf{Pergunta-guia:} se isso der errado depois de publicado, quem responde por essa decisão?
+  \vspace{0.3cm}
+  \begin{alertbox}{Um cuidado concreto}
+    \small Dados sensíveis compartilhados com uma ferramenta de IA: onde ficam armazenados, e quem mais tem acesso a eles?
+  \end{alertbox}
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item Na comunicação: a IA não assina a nota oficial, a assessoria assina, e é ela quem responde pelo que foi publicado
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{O ciclo entre Descrição e Discernimento}
+  \begin{itemize}
+    \item Raramente a primeira resposta da IA já está pronta
+    \item Descrever, avaliar o que voltou, refinar a descrição, avaliar de novo
+    \item Cada rodada custa pouco tempo, então vale iterar em vez de aceitar a primeira versão
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{alertbox}{Armadilha comum}
+    \small Aceitar a primeira resposta porque está bem escrita, e não porque foi checada.
+  \end{alertbox}
+\end{frame}
+
+% =========================================================
+\section{Ética como parte do fluxo}
+% =========================================================
+\dividerframe{Ética como parte do fluxo}{Não é uma etapa extra no fim, é parte de como se decide usar a ferramenta}
+
+\begin{frame}{Três perguntas éticas, em cada uso}
+  \begin{itemize}
+    \item \textbf{Criação}: por que escolhi esta ferramenta para esta tarefa, e não outra abordagem?
+    \item \textbf{Transparência}: as pessoas que vão receber este material sabem que a IA participou?
+    \item \textbf{Responsabilização}: quando este material sai daqui, de quem é a assinatura?
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{notebox}{Ponto central}
+    \small Nenhuma dessas três perguntas tem uma resposta fixa: o que é aceitável varia conforme o contexto (uma nota interna não é uma matéria assinada, e um rascunho não é uma peça final).
+  \end{notebox}
+\end{frame}
+
+\begin{frame}{Normas variam por contexto}
+  \begin{itemize}
+    \item O que vale para um rascunho interno não vale para uma publicação institucional
+    \item O que vale para um post de redes sociais não vale para uma nota oficial
+    \item Cada equipe de comunicação precisa decidir suas próprias linhas, com base nesses princípios
+  \end{itemize}
+  \vspace{0.3cm}
+  % PREENCHER: se a UFOP já tiver alguma diretriz institucional de uso de IA
+  % na comunicação, este é o lugar para citá-la.
+  \begin{alertbox}{Para discussão}
+    \small Esta universidade já tem, ou deveria ter, uma política própria de uso de IA na comunicação institucional?
+  \end{alertbox}
+\end{frame}
+
+% =========================================================
+\section{Ferramentas: bom uso, mau uso}
+% =========================================================
+\dividerframe{Ferramentas na prática da comunicação}{Bom uso e mau uso: o centro desta conversa}
+
+\begin{frame}{Como avaliar uma ferramenta antes de adotar}
+  \begin{itemize}
+    \item Para que tarefa específica ela serve aqui, nesta equipe?
+    \item O que ela decide sozinha, e o que continua exigindo uma pessoa?
+    \item Onde os dados que ela usa ou produz ficam armazenados?
+    \item Quem checa o resultado antes de ele sair da equipe?
+    \item O que muda se essa ferramenta ficar indisponível amanhã?
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------
+% Os quatro slides abaixo usam a macro \ferramentaframe.
+% Os itens estão com exemplos de ponto de partida: troque pelos
+% casos e ferramentas que fizerem mais sentido para esta equipe.
+% Para acrescentar uma quinta categoria, copie um destes blocos.
+% ---------------------------------------------------------------
+
+\ferramentaframe{Redação e edição de texto}
+  {Assistentes de escrita de uso geral (Claude, ChatGPT, Gemini e afins)}
+  {
+    \item Rascunhar uma primeira versão de nota ou release
+    \item Adaptar o mesmo texto para públicos diferentes
+    \item Revisar clareza, tom e concisão
+  }
+  {
+    \item Publicar sem revisão humana
+    \item Usar para decidir o que a instituição vai dizer
+    \item Inserir dados ou nomes sem conferir a fonte
+  }
+
+\ferramentaframe{Imagem, áudio e vídeo generativos}
+  {Geração de imagem, voz sintética e edição assistida por IA}
+  % PREENCHER: nomes de ferramentas específicas usadas por esta equipe
+  {
+    \item Ilustrações genéricas para posts e materiais internos
+    \item Rascunhos visuais para testar uma ideia de campanha
+  }
+  {
+    \item Retratar pessoas reais ou situações que pareçam reais sem identificação clara
+    \item Usar como se fosse fotografia jornalística
+  }
+
+\ferramentaframe{Pesquisa, transcrição e síntese}
+  {Transcrição de entrevistas, resumo de reuniões e apoio a levantamentos}
+  {
+    \item Transcrever entrevistas e reuniões longas
+    \item Resumir documentos extensos para uma primeira leitura
+  }
+  {
+    \item Tratar o resumo como substituto da leitura da fonte original
+    \item Citar dado ou estatística sem confirmar de onde veio
+  }
+
+\ferramentaframe{Atendimento e relacionamento com o público}
+  {Chatbots e respostas automatizadas em canais institucionais}
+  {
+    \item Responder perguntas frequentes e bem delimitadas
+    \item Direcionar o público para o canal humano certo
+  }
+  {
+    \item Deixar a IA responder sozinha em situações sensíveis ou de crise
+    \item Simular uma pessoa quando quem está respondendo é um sistema
+  }
+
+\begin{frame}{Casos e experiências da equipe}
+  % PREENCHER no dia: espaço para os colegas de comunicação
+  % compartilharem ferramentas e casos reais (conecta com a parte
+  % prática do evento).
+  \begin{itemize}
+    \item Qual ferramenta de IA já faz parte da rotina desta equipe?
+    \item O que funcionou melhor do que o esperado?
+    \item O que quase deu errado, e o que se aprendeu com isso?
+  \end{itemize}
+\end{frame}
+
+% =========================================================
+\section{Possibilidades}
+% =========================================================
+\dividerframe{Possibilidades}{Onde a IA amplia o trabalho da comunicação}
+
+\begin{frame}{Produtividade e escala}
+  \begin{itemize}
+    \item Produzir mais variações de um mesmo material em menos tempo
+    \item Liberar tempo da equipe para o que exige julgamento humano
+    \item Adaptar um mesmo conteúdo para vários formatos e canais
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Acessibilidade e inclusão}
+  \begin{itemize}
+    \item Gerar versões em linguagem simples de textos institucionais complexos
+    \item Apoiar tradução e adaptação para diferentes públicos
+    \item Transcrição e legendagem de conteúdo em áudio e vídeo
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Escuta e personalização}
+  \begin{itemize}
+    \item Analisar grandes volumes de comentários e menções nas redes
+    \item Identificar padrões e temas recorrentes na percepção pública
+    \item Personalizar comunicação para diferentes públicos institucionais
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Novos formatos narrativos}
+  \begin{itemize}
+    \item Explorar formatos que antes exigiam equipes maiores (vídeo curto, podcast, infográfico)
+    \item Testar rapidamente diferentes abordagens antes de investir na produção final
+  \end{itemize}
+\end{frame}
+
+% =========================================================
+\section{Limites e riscos}
+% =========================================================
+\dividerframe{Limites e riscos}{Reais, mas não são motivo para não usar, são motivo para usar com discernimento}
+
+\begin{frame}{Quatro riscos recorrentes}
+  \begin{itemize}
+    \item \textbf{Alucinação}: a IA pode inventar fatos, citações e fontes com total confiança
+    \item \textbf{Viés}: o resultado reflete os padrões dos dados de treino, não neutralidade
+    \item \textbf{Opacidade}: nem sempre é possível explicar por que a IA chegou a uma resposta
+    \item \textbf{Dependência}: usar demais sem checar pode erodir a própria capacidade crítica da equipe com o tempo
+  \end{itemize}
+\end{frame}
+
+% =========================================================
+\section{Síntese}
+% =========================================================
+\dividerframe{Para fechar}{}
+
+\begin{frame}{A tese, em uma frase}
+  % Sugestão de síntese: ajuste para a formulação que preferir.
+  \begin{center}
+    \vspace{0.4cm}
+    {\Large\color{navy}\bfseries Fluência em IA não é usar mais ferramentas,\\ é saber quando delegar, como descrever\\ e quando desconfiar.}
+    \vspace{0.4cm}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Agora, a palavra é de vocês}
+  \begin{itemize}
+    \item Quais ferramentas de IA já fazem parte do dia a dia da comunicação nesta universidade?
+    \item O que essa equipe já sabe sobre uso de IA que vale compartilhar?
+    \item Onde vocês sentem falta de uma diretriz clara?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Referências}
+  \small
+  \begin{itemize}
+    \item Anthropic Academy. \textit{AI Fluency: Framework \& Foundations}. Curso desenvolvido com Joseph Feller (University College Cork) e Rick Dakan (Ringling College). \url{https://www.anthropic.com/ai-fluency}
+  \end{itemize}
+\end{frame}
+
+\end{document}
