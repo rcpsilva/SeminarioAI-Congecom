@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  8 SEP 2026 18:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  8 SEP 2026 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -953,14 +953,76 @@ Overfull \vbox (37.21255pt too high) detected at line 336
 [20
 
 ]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 454.
+ (c:/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 454.
+ (c:/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 454.
+ (c:/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 454.
+ (c:/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 454.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 454.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 454.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 454.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 454.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 454.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 454.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 454.
+<next_token_prediction.png, id=200, 2730.2pt x 2007.5pt>
+File: next_token_prediction.png Graphic file (type png)
+<use next_token_prediction.png>
+Package pdftex.def Info: next_token_prediction.png  used on input line 454.
+(pdftex.def)             Requested size: 273.036pt x 200.76175pt.
+
+Overfull \hbox (73.8667pt too wide) in paragraph at lines 454--454
+ [][] 
+ []
+
+
+Overfull \vbox (20.15909pt too high) detected at line 454
+ []
+
+
 
 [21
 
-]
+ <./next_token_prediction.png>]
+<fine_tuning_process.png, id=210, 2730.2pt x 1525.7pt>
+File: fine_tuning_process.png Graphic file (type png)
+<use fine_tuning_process.png>
+Package pdftex.def Info: fine_tuning_process.png  used on input line 469.
+(pdftex.def)             Requested size: 273.036pt x 152.57893pt.
+
+Overfull \hbox (73.8667pt too wide) in paragraph at lines 469--469
+ [][] 
+ []
+
+
 
 [22
 
-]
+ <./fine_tuning_process.png>]
 
 [23
 
@@ -977,11 +1039,6 @@ Overfull \vbox (37.21255pt too high) detected at line 336
 [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 506--506
-[]\T1/lmss/bx/n/24 Ferramentas na prá-tica da 
- []
-
-
 
 [27
 
@@ -1014,6 +1071,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 506--506
 [34
 
 ]
+Overfull \vbox (6.56891pt too high) detected at line 640
+ []
+
+
 
 [35
 
@@ -1026,10 +1087,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 506--506
 [37
 
 ]
+Overfull \vbox (2.69162pt too high) detected at line 671
+ []
+
+
 
 [38
 
 ]
+Overfull \vbox (2.1821pt too high) detected at line 687
+ []
+
+
 
 [39
 
@@ -1050,49 +1119,146 @@ Underfull \hbox (badness 10000) in paragraph at lines 506--506
 [43
 
 ]
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
+]
+
+[49
+
+]
+
+[50
+
+]
+
+[51
+
+]
+
+[52
+
+]
+
+[53
+
+]
+
+[54
+
+]
+
+[55
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 871--871
+[]\T1/lmss/bx/n/24 Ferramentas na prá-tica da 
+ []
+
+
+
+[56
+
+]
+
+[57
+
+]
+
+[58
+
+]
+
+[59
+
+]
+
+[60
+
+]
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+
+[64
+
+]
+
+[65
+
+]
+
+[66
+
+]
+
+[67
+
+]
+
+[68
+
+]
+
+[69
+
+]
+
+[70
+
+]
+
+[71
+
+]
+
+[72
+
+]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 660.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 660.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1025.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1025.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 660.
- (c:/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 660.
- (c:/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 660.
- (c:/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 660.
- (c:/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 660.
+(Font)              <10> on input line 1025.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 660.
+(Font)              <7> on input line 1025.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 660.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 660.
- (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 660.
- (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+(Font)              <5> on input line 1025.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 660.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1025.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 660.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1025.
 
 
-[44
+[73
 
 ]
 \tf@nav=\write6
@@ -1113,18 +1279,18 @@ Package rerunfilecheck Info: File `seminario_ia_comunicacao.out' has not changed
 (rerunfilecheck)             Checksum: AAC9619609003E94F3F58EC8AECFAAAD;1253.
  ) 
 Here is how much of TeX's memory you used:
- 29767 strings out of 473577
- 607929 string characters out of 5732224
- 1007417 words of memory out of 5000000
- 51989 multiletter control sequences out of 15000+600000
- 619671 words of font info for 76 fonts, out of 8000000 for 9000
+ 30000 strings out of 473577
+ 611586 string characters out of 5732224
+ 1008511 words of memory out of 5000000
+ 52160 multiletter control sequences out of 15000+600000
+ 642227 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,123p,526b,1260s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on seminario_ia_comunicacao.pdf (44 pages, 176609 bytes).
+Output written on seminario_ia_comunicacao.pdf (73 pages, 434498 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 97 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

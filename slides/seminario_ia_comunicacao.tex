@@ -440,14 +440,35 @@
 
 
 \begin{frame}{Como o modelo aprende}
-  \begin{notebox}{Pré-treinamento}
-    \small O modelo lê bilhões de exemplos de texto e aprende a prever a próxima palavra. Repetindo isso muitas vezes, constrói uma espécie de mapa estatístico da linguagem e do conhecimento.
-  \end{notebox}
-  \vspace{0.3cm}
-  \begin{notebox}{Ajuste fino}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \begin{notebox}{Pré-treinamento}
+        \small O modelo lê bilhões de exemplos de texto e aprende a prever a próxima palavra. Repetindo isso muitas vezes, constrói uma espécie de mapa estatístico da linguagem e do conhecimento.
+      \end{notebox}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.1]{next_token_prediction.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Como o modelo aprende}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \begin{notebox}{Ajuste fino}
     \small Depois, o modelo aprende a seguir instruções, dar respostas úteis e evitar conteúdo nocivo, com apoio de feedback humano.
   \end{notebox}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.1]{fine_tuning_process.png}
+    \end{column}
+  \end{columns}
 \end{frame}
+
+
 
 \begin{frame}{Como você interage com o modelo}
   \begin{itemize}
@@ -467,6 +488,350 @@
     \item Aprende em contexto: se adapta a tarefas novas a partir de instruções ou exemplos no próprio prompt, sem precisar de novo treinamento
     \item Desenvolve capacidades emergentes: habilidades que aparecem com a escala, sem terem sido projetadas
   \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------
+% Capacidades e limitações: conhecer os dois lados antes de
+% decidir onde a IA generativa ajuda de verdade.
+% ---------------------------------------------------------------
+\begin{frame}{Pontos fortes}
+  \begin{itemize}
+    \item Versatilidade: escreve com um tom específico, resume relatórios longos, traduz, explica temas complexos de áreas diferentes
+    \item Troca de tarefa sem retreinamento: o mesmo sistema ajuda a redigir um texto e, na sequência, analisar uma planilha
+    \item Mantém o fio da conversa: lembra o que foi dito antes e constrói em cima disso
+    \item Conecta-se a ferramentas externas (busca na web, arquivos, outras aplicações), o que amplia bastante o que consegue ajudar
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Limite: o que ela não sabe}
+  \begin{notebox}{Data de corte}
+    \small O modelo só conhece o mundo até a data em que foi treinado. É como alguém que entrou em um retiro sem internet: não sabe o que aconteceu depois que saiu de lá.
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{alertbox}{Mesmo com ferramentas}
+    \small Ter acesso a ferramentas externas não garante acesso à fonte certa. É como ter um colega brilhante sem acesso ao banco de dados interno da instituição: por mais competente que seja, a ajuda tem um teto.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Limite: alucinação}
+  \begin{notebox}{Definição}
+    \small A IA pode afirmar algo plausível, mas incorreto, com total confiança. Diferente de um motor de busca, ela não recupera documentos: gera texto novo com base em padrões estatísticos, e às vezes erra ao juntar informações.
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{alertbox}{A analogia}
+    \small Como um amigo que conta uma história com confiança absoluta, só que os detalhes estão todos errados.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Outras variáveis a considerar}
+  \begin{itemize}
+    \item \textbf{Não é determinística}: a mesma pergunta pode gerar respostas ligeiramente diferentes a cada vez
+    \item \textbf{Janela de contexto}: o limite do que o modelo processa de uma vez também é uma limitação prática em documentos longos ou conversas extensas
+    \item \textbf{Raciocínio em várias etapas} (matemática, lógica) é historicamente um ponto fraco, embora modelos recentes venham evoluindo nisso
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Forças complementares}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.485\textwidth}
+      \begin{notebox}{O humano traz}
+        \small
+        \begin{itemize}
+          \item Pensamento crítico
+          \item Julgamento
+          \item Criatividade
+          \item Supervisão ética
+        \end{itemize}
+      \end{notebox}
+    \end{column}
+    \begin{column}{0.485\textwidth}
+      \begin{alertbox}{A IA traz}
+        \small
+        \begin{itemize}
+          \item Velocidade
+          \item Escala
+          \item Reconhecimento de padrões
+          \item Processamento de grandes volumes
+        \end{itemize}
+      \end{alertbox}
+    \end{column}
+  \end{columns}
+  \vspace{0.3cm}
+  {\small\color{graytxt} O campo muda rápido, e parte dessas limitações vem sendo mitigada. Mas algumas devem continuar por um bom tempo, daí a importância de seguir testando.}
+\end{frame}
+
+
+\begin{frame}{Perguntas}
+  \begin{itemize}
+    \item Agora que você sabemais sobre os fundamentos técnicos da IA, isso muda como você pensa sobre a sua utilização?
+    \pause
+    \begin{itemize}
+    \item Fluência de texto deixa de ser sinal de precisão, porque para o modelo escrever bem e estar certo são a mesma coisa (padrão estatístico), não duas competências distintas
+    \item Saber da data de corte e da janela de contexto tira a expectativa de que o modelo ``já sabe'' o contexto institucional, isso vira parte do que você precisa fornecer
+    \item Como o modelo se adapta só ao que está na conversa (aprendizado em contexto), refinar o prompt é reformular o que ele tem disponível, não ensinar algo permanente
+    \item O cuidado com dados sensíveis é sobre o que se compartilha a cada interação, não sobre o que o modelo vai ``lembrar'' depois
+  \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+% ============================================================
+% Delegação (aprofundamento) + Exercício prático
+% Apenas os frames, sem preâmbulo: usa os macros já definidos no
+% arquivo mestre (notebox, alertbox, dividerframe). Colar dentro
+% da seção "O framework das quatro competências", no lugar do
+% frame único "Delegação" já existente, antes do frame "Descrição".
+% ============================================================
+
+\begin{frame}{Delegação: o centro não é a IA}
+  \begin{notebox}{O ponto que costuma surpreender}
+    \small A base de uma boa delegação não está na IA. Está na sua própria expertise e na sua compreensão clara do que você quer alcançar.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} o que eu exatamente quero alcançar aqui, e como é o sucesso, na prática?
+
+  \begin{alertbox}{Sem isso}
+    \small Sem um objetivo claro, nem a IA mais avançada leva você a lugar nenhum.
+  \end{alertbox}
+
+  \begin{itemize}
+    \item Mapear a meta e o critério de sucesso vem antes de qualquer prompt
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Consciência do problema}
+  \begin{notebox}{Definição}
+    \small Capacidade de definir claramente seus objetivos e entender o trabalho necessário antes de trazer a IA para o processo.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} que tipo de trabalho está em jogo aqui? Simples mas demorado, incerto, com falta de dado, ou de julgamento crítico?
+
+  \begin{alertbox}{Ordem importa}
+    \small Quem colabora bem com IA é, primeiro, especialista no próprio problema, e só depois um bom delegador de tarefas.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Consciência de plataforma}
+  \begin{notebox}{Definição}
+    \small Conhecimento prático dos sistemas de IA disponíveis, e das capacidades e limites específicos de cada um.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} você sabe quais sistemas priorizam velocidade em vez de profundidade, ou precisão em vez de criatividade?
+
+  \begin{alertbox}{Como se desenvolve}
+    \small Na prática, testando. O campo muda quase todo dia, e não existe uma ferramenta perfeita única para tudo.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Divisão estratégica do trabalho}
+  \begin{notebox}{Definição}
+    \small Processo estratégico de distribuir o trabalho entre humano e IA, apoiado nos três modos já vistos: automação, aumento e agência.
+  \end{notebox}
+  \vspace{0.25cm}
+  \begin{itemize}
+    \item Que partes do fluxo se beneficiam de automação?
+    \item Onde o aumento cria mais valor do que fazer sozinho ou automatizar tudo?
+    \item Que áreas de julgamento crítico continuam exclusivamente humanas?
+  \end{itemize}
+
+  \begin{alertbox}{Um lembrete}
+    \small A resposta muda de projeto para projeto, e até de etapa para etapa dentro do mesmo projeto.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Delegação, em três elementos}
+  \begin{itemize}
+    \item \textbf{Consciência do problema}: entender seus objetivos e o trabalho necessário
+    \item \textbf{Consciência de plataforma}: entender capacidades e limites da IA disponível
+    \item \textbf{Divisão do trabalho}: distribuir estrategicamente entre você e a IA
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{alertbox}{Ponto central}
+    \small Delegar bem não é entregar o volante e sair de cena. É fazer escolhas deliberadas que aproveitam os pontos fortes de cada lado.
+  \end{alertbox}
+\end{frame}
+
+% =========================================================
+% Exercício prático
+% =========================================================
+\dividerframe{Exercício prático}{Analise uma tarefa com um assistente de IA}
+
+\begin{frame}{Como fazer}
+  \begin{notebox}{Passo a passo}
+    \small
+    \begin{enumerate}
+      \item Escolha uma tarefa simples, do seu trabalho ou da sua vida pessoal (algo pequeno: redigir um e-mail, esboçar uma apresentação, planejar uma reunião ou evento)
+      \item Abra uma conversa com o Claude, ou outro assistente de IA, e apresente essa tarefa, pedindo ajuda para pensar em um plano de delegação
+    \end{enumerate}
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{alertbox}{Um jeito de abrir a conversa}
+    \small ``Estou preparando [a tarefa] e quero pensar com você em um plano de delegação: o que eu deveria delegar a uma IA como você, e o que deveria continuar fazendo eu mesmo.''
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Perguntas para explorar juntos}
+  \begin{itemize}
+    \item Qual é a visão geral para essa tarefa? Como é um bom resultado?
+    \item Quais são as partes de trabalho necessárias para chegar lá?
+    \item Quais dessas partes exigem expertise humana, criatividade ou julgamento?
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{notebox}{Atenção}
+    \small Tenha uma conversa de verdade, não apenas troquem afirmações prontas. Vão e voltem: cada lado costuma enxergar algo que o outro não vê.
+  \end{notebox}
+  \vspace{0.2cm}
+  \begin{alertbox}{No final}
+    \small Construam juntos um plano simples de delegação, que use os pontos fortes de vocês dois.
+  \end{alertbox}
+\end{frame}
+
+
+\dividerframe{Exercício prático}{Planejamento e delegação de projeto}
+
+\begin{frame}{Passo 1: escolha o projeto}
+  \begin{notebox}{O que escolher}
+    \small Um projeto de porte médio, com várias etapas, que você possa desenvolver ao longo do restante do curso.
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item \textbf{Substancial}: envolve tipos diferentes de tarefa
+    \item \textbf{Viável}: dá para concluir em cerca de 1 hora de trabalho
+    \item \textbf{Genuíno}: algo que você realmente queira criar ou realizar
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Ideias de projeto (comunicação)}
+  \begin{itemize}
+    \item Uma apresentação envolvente sobre um tema que você domina
+    \item Um post, ou série de posts, explicando um tema complexo para um público geral
+    \item Uma proposta ou pitch para uma ideia que você queira levar adiante
+    \item Uma bio pessoal ou profissional, com materiais de apoio
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Passo 2: visão e objetivos do projeto}
+  \begin{notebox}{Como fazer}
+    \small Compartilhe a ideia com o Claude e deixe que ele pergunte, até vocês terem uma visão sólida do resultado final.
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item Como é o sucesso para este projeto?
+    \item O que tornaria este projeto especialmente valioso ou significativo para você?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Passo 3: análise de delegação}
+  \begin{notebox}{Como no exercício anterior}
+    \small Explorem o projeto pela lente da Delegação, em uma conversa de verdade, não uma lista de afirmações prontas.
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item Identifiquem juntos as tarefas principais do projeto
+    \item Para cada tarefa, discutam uma de cada vez (próximo slide)
+    \item Montem um plano de projeto com as tarefas e as decisões de delegação
+    \item Salvem o plano: vocês vão voltar a ele mais adiante no curso
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Para cada tarefa, perguntem}
+  \begin{itemize}
+    \item Que habilidades, conhecimento ou capacidades de IA são necessárias?
+    \item Que partes se beneficiam de pontos fortes exclusivamente humanos?
+    \item Que partes podem aproveitar bem as capacidades da IA?
+    \item Onde a colaboração teria mais impacto?
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{alertbox}{Atenção}
+    \small Desafiem suposições, peçam esclarecimentos, fiquem abertos a insights inesperados.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Reflexão}
+  \begin{itemize}
+    \item Que insights surgiram da conversa de planejamento com o Claude?
+    \item Qual aspecto do plano de delegação parece mais desafiador?
+    \item Que informação ou habilidade adicional ajudaria a delegar melhor para a IA?
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Descrição: além do prompt}
+  \begin{notebox}{O que é}
+    \small Comunicar com a IA para explicar tarefas, pedir esclarecimentos, dar contexto e guiar a interação, não só escrever prompts espertos.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} a IA sabe o que eu quero, ou estou deixando ela adivinhar?
+
+  \begin{alertbox}{A diferença}
+    \small Pedir ``faça o jantar'' versus dar uma receita detalhada, com ingredientes e modo de preparo. A IA não lê mente.
+  \end{alertbox}
+
+  \begin{itemize}
+    \item É a ponte entre a sua intenção e a capacidade da IA
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Descrição de produto}
+  \begin{notebox}{Definição}
+    \small Capacidade de definir claramente o que você quer que a IA crie ou entregue.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} qual é o contexto, qual o formato esperado, quem é o público e qual estilo é adequado?
+
+  \begin{alertbox}{Não deixe a IA adivinhar}
+    \small Defina requisitos explícitos, em vez de assumir que a IA já sabe o que você busca.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Descrição de processo}
+  \begin{notebox}{Definição}
+    \small Capacidade de guiar como a IA aborda o seu pedido, não só o resultado final.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} há dados específicos a usar, uma ordem a seguir, um estilo de análise ou técnica que você quer aplicada?
+
+  \begin{alertbox}{Três formas de guiar}
+    \small Uma orientação geral, como um manual; um passo a passo, como uma receita; ou uma demonstração por exemplos.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Descrição de desempenho}
+  \begin{notebox}{Definição}
+    \small Capacidade de definir os aspectos comportamentais da interação com a IA.
+  \end{notebox}
+  \vspace{0.25cm}
+  \textbf{Pergunta-guia:} você está convergindo para uma resposta específica, ou explorando possibilidades? Quer que a IA questione suas suposições, ou siga sua direção?
+
+  \begin{alertbox}{Ponto central}
+    \small Ferramentas de IA não são bancos de dados nem máquinas de vender refrigerante. São sistemas interativos, que se comportam diferente conforme o contexto, quase como pessoas.
+  \end{alertbox}
+\end{frame}
+
+\begin{frame}{Descrição, em três elementos}
+  \begin{itemize}
+    \item \textbf{Descrição de produto}: o que você quer que a IA crie
+    \item \textbf{Descrição de processo}: como a IA deve abordar o pedido
+    \item \textbf{Descrição de desempenho}: como a IA deve se comportar na interação
+  \end{itemize}
+  \vspace{0.3cm}
+  \begin{alertbox}{Ponto central}
+    \small Desenvolver a descrição transforma a IA de assistência genérica em um parceiro de raciocínio afinado às suas necessidades.
+  \end{alertbox}
+\end{frame}
+
+
+\begin{frame}{Exercício: antes e depois de um prompt ruim}
+  \begin{notebox}{Como fazer}
+    \small Peça ao Claude para te desafiar com prompts mal escritos, e pratique a sua Descrição para melhorá-los.
+  \end{notebox}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item O Claude propõe prompts mal escritos para você melhorar
+    \item Melhore cada um: descrição de produto (o quê), de processo (como abordar) e de desempenho (como se comportar)
+    \item Converse sobre o antes e depois, e peça feedback ao Claude
+    \item Depois de uns 5 minutos, troquem de papel. Observe o que o Claude acrescenta e como organiza
+  \end{enumerate}
 \end{frame}
 
 % =========================================================
