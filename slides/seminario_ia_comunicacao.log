@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  9 SEP 2026 14:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  9 SEP 2026 16:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -985,7 +985,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 470.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 470.
-<next_token_prediction.png, id=187, 2730.2pt x 2007.5pt>
+<next_token_prediction.png, id=167, 2730.2pt x 2007.5pt>
 File: next_token_prediction.png Graphic file (type png)
 <use next_token_prediction.png>
 Package pdftex.def Info: next_token_prediction.png  used on input line 470.
@@ -1004,7 +1004,7 @@ Overfull \vbox (20.15909pt too high) detected at line 470
 [21
 
  <./next_token_prediction.png>]
-<fine_tuning_process.png, id=197, 2730.2pt x 1525.7pt>
+<fine_tuning_process.png, id=177, 2730.2pt x 1525.7pt>
 File: fine_tuning_process.png Graphic file (type png)
 <use fine_tuning_process.png>
 Package pdftex.def Info: fine_tuning_process.png  used on input line 485.
@@ -1332,95 +1332,6 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 [92
 
 ]
-
-[93
-
-]
-
-[94
-
-]
-
-[95
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1346--1346
-[]\T1/lmss/bx/n/24 Ferramentas na prá-tica da 
- []
-
-
-
-[96
-
-]
-
-[97
-
-]
-
-[98
-
-]
-
-[99
-
-]
-
-[100
-
-]
-
-[101
-
-]
-
-[102
-
-]
-
-[103
-
-]
-
-[104
-
-]
-
-[105
-
-]
-
-[106
-
-]
-
-[107
-
-]
-
-[108
-
-]
-
-[109
-
-]
-
-[110
-
-]
-
-[111
-
-]
-
-[112
-
-]
-
-[113
-
-]
 \tf@nav=\write6
 \openout6 = `seminario_ia_comunicacao.nav'.
 
@@ -1436,21 +1347,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
 Package rerunfilecheck Info: File `seminario_ia_comunicacao.out' has not changed.
-(rerunfilecheck)             Checksum: AAC9619609003E94F3F58EC8AECFAAAD;1253.
+(rerunfilecheck)             Checksum: CEB55C6E4634ABDD9501CB16AE5CA9E2;547.
  ) 
 Here is how much of TeX's memory you used:
- 30280 strings out of 473577
- 615309 string characters out of 5732224
- 1007889 words of memory out of 5000000
- 52362 multiletter control sequences out of 15000+600000
+ 30148 strings out of 473577
+ 613821 string characters out of 5732224
+ 1007651 words of memory out of 5000000
+ 52277 multiletter control sequences out of 15000+600000
  644995 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,13n,123p,526b,1259s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on seminario_ia_comunicacao.pdf (113 pages, 475168 bytes).
+ 128i,13n,123p,526b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on seminario_ia_comunicacao.pdf (92 pages, 450189 bytes).
 PDF statistics:
- 938 PDF objects out of 1000 (max. 8388607)
- 683 compressed objects within 7 object streams
- 235 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 754 PDF objects out of 1000 (max. 8388607)
+ 544 compressed objects within 6 object streams
+ 188 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

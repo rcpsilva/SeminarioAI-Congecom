@@ -2,8 +2,3 @@
 \beamer@sectionintoc {1}{Fluência em IA}{3}{0}{1}
 \beamer@sectionintoc {2}{O framework das quatro competências}{6}{0}{2}
 \beamer@sectionintoc {3}{Fundamentos de IA generativa}{19}{0}{3}
-\beamer@sectionintoc {4}{Ética como parte do fluxo}{93}{0}{4}
-\beamer@sectionintoc {5}{Ferramentas: bom uso, mau uso}{96}{0}{5}
-\beamer@sectionintoc {6}{Possibilidades}{103}{0}{6}
-\beamer@sectionintoc {7}{Limites e riscos}{108}{0}{7}
-\beamer@sectionintoc {8}{Síntese}{110}{0}{8}
