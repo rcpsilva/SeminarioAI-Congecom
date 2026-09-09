@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  8 SEP 2026 21:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.30)  8 SEP 2026 23:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1167,11 +1167,6 @@ Overfull \vbox (2.1821pt too high) detected at line 687
 [55
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 871--871
-[]\T1/lmss/bx/n/24 Ferramentas na prá-tica da 
- []
-
-
 
 [56
 
@@ -1240,25 +1235,214 @@ Underfull \hbox (badness 10000) in paragraph at lines 871--871
 [72
 
 ]
+
+[73
+
+]
+
+[74
+
+]
+
+[75
+
+]
+Overfull \vbox (0.75937pt too high) detected at line 1098
+ []
+
+
+
+[76
+
+]
+Overfull \vbox (0.75937pt too high) detected at line 1114
+ []
+
+
+
+[77
+
+]
+
+[78
+
+]
+
+[79
+
+]
+
+[80
+
+]
+
+[81
+
+]
+
+[82
+
+]
+Overfull \vbox (0.75937pt too high) detected at line 1184
+ []
+
+
+
+[83
+
+]
+Overfull \vbox (0.75937pt too high) detected at line 1200
+ []
+
+
+
+[84
+
+]
+
+[85
+
+]
+
+[86
+
+]
+
+[87
+
+]
+
+[88
+
+]
+
+[89
+
+]
+
+[90
+
+]
+
+[91
+
+]
+
+[92
+
+]
+
+[93
+
+]
+
+[94
+
+]
+
+[95
+
+]
+
+[96
+
+]
+
+[97
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1320
+[]\T1/lmss/bx/n/24 Ferramentas na prá-tica da 
+ []
+
+
+
+[98
+
+]
+
+[99
+
+]
+
+[100
+
+]
+
+[101
+
+]
+
+[102
+
+]
+
+[103
+
+]
+
+[104
+
+]
+
+[105
+
+]
+
+[106
+
+]
+
+[107
+
+]
+
+[108
+
+]
+
+[109
+
+]
+
+[110
+
+]
+
+[111
+
+]
+
+[112
+
+]
+
+[113
+
+]
+
+[114
+
+]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1025.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1025.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1474.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1474.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1025.
+(Font)              <10> on input line 1474.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1025.
+(Font)              <7> on input line 1474.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1025.
+(Font)              <5> on input line 1474.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1025.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1474.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1025.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1474.
 
 
-[73
+[115
 
 ]
 \tf@nav=\write6
@@ -1279,18 +1463,18 @@ Package rerunfilecheck Info: File `seminario_ia_comunicacao.out' has not changed
 (rerunfilecheck)             Checksum: AAC9619609003E94F3F58EC8AECFAAAD;1253.
  ) 
 Here is how much of TeX's memory you used:
- 30000 strings out of 473577
- 611586 string characters out of 5732224
- 1008511 words of memory out of 5000000
- 52160 multiletter control sequences out of 15000+600000
+ 30230 strings out of 473577
+ 614229 string characters out of 5732224
+ 1008654 words of memory out of 5000000
+ 52306 multiletter control sequences out of 15000+600000
  642227 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,123p,526b,1260s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on seminario_ia_comunicacao.pdf (73 pages, 434498 bytes).
+Output written on seminario_ia_comunicacao.pdf (115 pages, 483362 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 473 compressed objects within 5 object streams
- 155 named destinations out of 1000 (max. 500000)
+ 966 PDF objects out of 1000 (max. 8388607)
+ 706 compressed objects within 8 object streams
+ 239 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
